@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ECharts ¹ØÏµÍ¼</title>
-    <meta charset="GB2312"/>
+    <meta charset="UTF-8">
+    <title>ECharts ç½‘ç»œå›¾</title>
     <script src="scripts/jquery-1.6.2.min.js"></script>
     <script src="scripts/echarts.js"></script>
 </head>
@@ -12,51 +12,36 @@
 <script type="text/javascript">
     var myChart = echarts.init(document.getElementById('main'));
     var categories = [];
-    categories[0] = {name:"AI+Ğ£ÆóÈÚºÏ¹²´´"};
-    categories[1] = {name:"ÖÇ»ÛÒ½ÁÆ"};
-    categories[2] = {name:"Ïç´åÎÄÂÃ"};
-    categories[3] = {name:"ÖÇÄÜ²úÆ·"};
-    categories[4] = {name:"Êı×ÖÕ¹ÀÀ"};
-    option = {
-        // Í¼µÄ±êÌâ
+    categories[0] = {name:"AI+å­¦æ ¡ç»¼åˆç½‘ç»œ"};
+    categories[1] = {name:"æ™ºæ…§åŒ»ç–—"};
+    categories[2] = {name:"æ™ºèƒ½åˆ¶é€ "};
+    categories[3] = {name:"æ™ºèƒ½äº§å“"};
+    categories[4] = {name:"åˆ›æ–°å±•ç¤º"};
+
+    var option = {
         title: {
-            text: 'AI+Ğ£ÆóÈÚºÏÖªÊ¶Í¼Æ×¹²´´'
+            text: 'AI+å­¦æ ¡çŸ¥è¯†ç½‘ç»œå›¾'
         },
-        // ÌáÊ¾¿òµÄÅäÖÃ
         tooltip: {
-//            formatter: function (x) {
-//                return x.data.des;
-//            }
         },
-        // ¹¤¾ßÏä
         toolbox: {
-            // ÏÔÊ¾¹¤¾ßÏä
             show: true,
             feature: {
-                mark: {
-                    show: true
-                },
-                // »¹Ô­
-                restore: {
-                    show: true
-                },
-                // ±£´æÎªÍ¼Æ¬
-                saveAsImage: {
-                    show: true
-                }
+                mark: {show: true},
+                restore: {show: true},
+                saveAsImage: {show: true}
             }
         },
         legend: [{
-            // selectedMode: 'single',
             data: categories.map(function (a) {
                 return a.name;
             })
         }],
         series: [{
-            type: 'graph', // ÀàĞÍ:¹ØÏµÍ¼
-            layout: 'force', //Í¼µÄ²¼¾Ö£¬ÀàĞÍÎªÁ¦µ¼Í¼
-            symbolSize: 40, // µ÷Õû½ÚµãµÄ´óĞ¡
-            roam: true, // ÊÇ·ñ¿ªÆôÊó±êËõ·ÅºÍÆ½ÒÆÂşÓÎ¡£Ä¬ÈÏ²»¿ªÆô¡£Èç¹ûÖ»ÏëÒª¿ªÆôËõ·Å»òÕßÆ½ÒÆ,¿ÉÒÔÉèÖÃ³É 'scale' »òÕß 'move'¡£ÉèÖÃ³É true Îª¶¼¿ªÆô
+            type: 'graph',
+            layout: 'force',
+            symbolSize: 40,
+            roam: true,
             edgeSymbol: ['circle', 'arrow'],
             edgeSymbolSize: [2, 10],
             edgeLabel: {
@@ -91,116 +76,31 @@
                     textStyle: {}
                 }
             },
-
-            // Êı¾İ
-            data: [{
-                name: 'AI+Ğ£ÆóÈÚºÏ¹²´´',
-                des: '',
-                symbolSize: 100,
-                category: 0,
-            }, {
-                name: 'ÖÇ»ÛÒ½ÁÆ',
-                des: '',
-                symbolSize: 50,
-                category: 1,
-            }, {
-                name: 'Ïç´åÎÄÂÃ',
-                des: '',
-                symbolSize: 50,
-                category: 2,
-            }, {
-                name: 'ÖÇÄÜ²úÆ·',
-                des: '',
-                symbolSize: 50,
-                category: 3,
-            }, {
-                name: 'Êı×ÖÕ¹ÀÀ',
-                des: '',
-                symbolSize: 50,
-                category: 4,
-            }, {
-                name: '»ùÓÚÄÉÃ×Î¢¾§Í¸Æ¤¼¼ÊõµÄĞÂÒ»´úÃÀÈİÒÇ',
-                des: '',
-                symbolSize: 30,
-                category: 1,
-            }, {
-                name: '¸ßÖÊ¸ßĞ§Ò½ÁÆ·À»¤ÖÆÆ·ÖÆÔì×°±¸¹Ø¼ü¼¼Êõ¼°²úÒµ»¯Ó¦ÓÃ',
-                des: '',
-                symbolSize: 50,
-                category: 1,
-            }, {
-                name: 'Éè¼ÆÇı¶¯µÄ?±õÈâ¹ğ²úÒµÏµÍ³´´ĞÂÑĞ¾¿',
-                des: '',
-                symbolSize: 50,
-                category: 2,
-            }, {
-                name: 'Æ«Ì±²½Ì¬ÖÇÄÜË®ÏÂ²½Ì¬ÑµÁ·ÒÇ',
-                des: '',
-                symbolSize: 50,
-                category: 3,
-            }, {
-                name: 'ÂÖ×ã¶àÄ£ÇĞ»»ËÄ×ã¸¨Öú»úÆ÷ÈË',
-                des: '',
-                symbolSize: 50,
-                category: 3,
-            }, {
-                name: '¶àÓÃ»§ÔÚÏß»¥¶¯ĞéÄâÕ¹ÌüÏµÍ³',
-                des: '',
-                symbolSize: 50,
-                category: 4,
-            }]
-            ,
-            links: [{
-                source: 'AI+Ğ£ÆóÈÚºÏ¹²´´',
-                target: 'ÖÇ»ÛÒ½ÁÆ',
-                name: '',
-                des: 'link01des'
-            }, {
-                source: 'AI+Ğ£ÆóÈÚºÏ¹²´´',
-                target: 'Ïç´åÎÄÂÃ',
-                name: '',
-                des: 'link02des'
-            }, {
-                source: 'AI+Ğ£ÆóÈÚºÏ¹²´´',
-                target: 'ÖÇÄÜ²úÆ·',
-                name: '',
-                des: 'link03des'
-            }, {
-                source: 'AI+Ğ£ÆóÈÚºÏ¹²´´',
-                target: 'Êı×ÖÕ¹ÀÀ',
-                name: '',
-                des: 'link05des'
-            }, {
-                source: 'ÖÇ»ÛÒ½ÁÆ',
-                target: '»ùÓÚÄÉÃ×Î¢¾§Í¸Æ¤¼¼ÊõµÄĞÂÒ»´úÃÀÈİÒÇ',
-                name: '²úÒµ³É¹û',
-                des: 'link05des'
-            }, {
-                source: 'ÖÇ»ÛÒ½ÁÆ',
-                target: '¸ßÖÊ¸ßĞ§Ò½ÁÆ·À»¤ÖÆÆ·ÖÆÔì×°±¸¹Ø¼ü¼¼Êõ¼°²úÒµ»¯Ó¦ÓÃ',
-                name: '²úÒµ³É¹û',
-                des: 'link05des'
-            }, {
-                source: 'Ïç´åÎÄÂÃ',
-                target: 'Éè¼ÆÇı¶¯µÄ?±õÈâ¹ğ²úÒµÏµÍ³´´ĞÂÑĞ¾¿',
-                name: '²úÒµ³É¹û',
-                des: 'link05des'
-            }, {
-                source: 'ÖÇÄÜ²úÆ·',
-                target: 'Æ«Ì±²½Ì¬ÖÇÄÜË®ÏÂ²½Ì¬ÑµÁ·ÒÇ',
-                name: '²úÒµ³É¹û',
-                des: 'link05des'
-            }, {
-                source: 'ÖÇÄÜ²úÆ·',
-                target: 'ÂÖ×ã¶àÄ£ÇĞ»»ËÄ×ã¸¨Öú»úÆ÷ÈË',
-                name: '²úÒµ³É¹û',
-                des: 'link05des'
-            }, {
-                source: 'Êı×ÖÕ¹ÀÀ',
-                target: '¶àÓÃ»§ÔÚÏß»¥¶¯ĞéÄâÕ¹ÌüÏµÍ³',
-                name: '²úÒµ³É¹û',
-                des: 'link05des'
-            }],
+            data: [
+                {name: 'AI+å­¦æ ¡ç»¼åˆç½‘ç»œ', des: '', symbolSize: 100, category: 0},
+                {name: 'æ™ºæ…§åŒ»ç–—', des: '', symbolSize: 50, category: 1},
+                {name: 'æ™ºèƒ½åˆ¶é€ ', des: '', symbolSize: 50, category: 2},
+                {name: 'æ™ºèƒ½äº§å“', des: '', symbolSize: 50, category: 3},
+                {name: 'åˆ›æ–°å±•ç¤º', des: '', symbolSize: 50, category: 4},
+                {name: 'æ™ºæ…§åŒ»ç–—å¾®å‹ä¼ æ„Ÿå™¨', des: '', symbolSize: 30, category: 1},
+                {name: 'é«˜æ•ˆåŒ»ç–—è®¾å¤‡', des: '', symbolSize: 50, category: 1},
+                {name: 'æ™ºèƒ½åˆ¶é€ ç³»ç»Ÿç ”ç©¶', des: '', symbolSize: 50, category: 2},
+                {name: 'åŠ¨æ€æ°´è´¨ç›‘æµ‹ç³»ç»Ÿ', des: '', symbolSize: 50, category: 3},
+                {name: 'æ™ºèƒ½å®¶å±…äº§å“', des: '', symbolSize: 50, category: 3},
+                {name: 'ç”¨æˆ·è¡Œä¸ºåˆ†æç³»ç»Ÿ', des: '', symbolSize: 50, category: 4}
+            ],
+            links: [
+                {source: 'AI+å­¦æ ¡ç»¼åˆç½‘ç»œ', target: 'æ™ºæ…§åŒ»ç–—', name: '', des: 'link01des'},
+                {source: 'AI+å­¦æ ¡ç»¼åˆç½‘ç»œ', target: 'æ™ºèƒ½åˆ¶é€ ', name: '', des: 'link02des'},
+                {source: 'AI+å­¦æ ¡ç»¼åˆç½‘ç»œ', target: 'æ™ºèƒ½äº§å“', name: '', des: 'link03des'},
+                {source: 'AI+å­¦æ ¡ç»¼åˆç½‘ç»œ', target: 'åˆ›æ–°å±•ç¤º', name: '', des: 'link05des'},
+                {source: 'æ™ºæ…§åŒ»ç–—', target: 'æ™ºæ…§åŒ»ç–—å¾®å‹ä¼ æ„Ÿå™¨', name: 'é¡¹ç›®æˆæœ', des: 'link05des'},
+                {source: 'æ™ºæ…§åŒ»ç–—', target: 'é«˜æ•ˆåŒ»ç–—è®¾å¤‡', name: 'é¡¹ç›®æˆæœ', des: 'link05des'},
+                {source: 'æ™ºèƒ½åˆ¶é€ ', target: 'æ™ºèƒ½åˆ¶é€ ç³»ç»Ÿç ”ç©¶', name: 'é¡¹ç›®æˆæœ', des: 'link05des'},
+                {source: 'æ™ºèƒ½äº§å“', target: 'åŠ¨æ€æ°´è´¨ç›‘æµ‹ç³»ç»Ÿ', name: 'é¡¹ç›®æˆæœ', des: 'link05des'},
+                {source: 'æ™ºèƒ½äº§å“', target: 'æ™ºèƒ½å®¶å±…äº§å“', name: 'é¡¹ç›®æˆæœ', des: 'link05des'},
+                {source: 'åˆ›æ–°å±•ç¤º', target: 'ç”¨æˆ·è¡Œä¸ºåˆ†æç³»ç»Ÿ', name: 'é¡¹ç›®æˆæœ', des: 'link05des'}
+            ],
             categories: categories,
         }]
     };
@@ -208,28 +108,29 @@
     myChart.on('click', function (params) {
         if (params.dataType == 'node') {
             switch(params.name){
-                case "»ùÓÚÄÉÃ×Î¢¾§Í¸Æ¤¼¼ÊõµÄĞÂÒ»´úÃÀÈİÒÇ":
+                case "æ™ºæ…§åŒ»ç–—å¾®å‹ä¼ æ„Ÿå™¨":
                     window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80254",'_blank');
-                    //window.open = "https://courses.gdut.edu.cn/mod/page/view.php?id=80254";
                     break;
-                case "¸ßÖÊ¸ßĞ§Ò½ÁÆ·À»¤ÖÆÆ·ÖÆÔì×°±¸¹Ø¼ü¼¼Êõ¼°²úÒµ»¯Ó¦ÓÃ":
-                    window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80256",'_blank'); break;
-                case "Éè¼ÆÇı¶¯µÄ?±õÈâ¹ğ²úÒµÏµÍ³´´ĞÂÑĞ¾¿":
-                    window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80257",'_blank'); break;
-                case "Æ«Ì±²½Ì¬ÖÇÄÜË®ÏÂ²½Ì¬ÑµÁ·ÒÇ":
-                    window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80261",'_blank'); break;
-                case "ÂÖ×ã¶àÄ£ÇĞ»»ËÄ×ã¸¨Öú»úÆ÷ÈË":
-                    window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80267",'_blank'); break;
-                case "¶àÓÃ»§ÔÚÏß»¥¶¯ĞéÄâÕ¹ÌüÏµÍ³":
-                    window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80262",'_blank'); break;
+                case "é«˜æ•ˆåŒ»ç–—è®¾å¤‡":
+                    window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80256",'_blank'); 
+                    break;
+                case "æ™ºèƒ½åˆ¶é€ ç³»ç»Ÿç ”ç©¶":
+                    window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80257",'_blank'); 
+                    break;
+                case "åŠ¨æ€æ°´è´¨ç›‘æµ‹ç³»ç»Ÿ":
+                    window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80261",'_blank'); 
+                    break;
+                case "æ™ºèƒ½å®¶å±…äº§å“":
+                    window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80267",'_blank'); 
+                    break;
+                case "ç”¨æˆ·è¡Œä¸ºåˆ†æç³»ç»Ÿ":
+                    window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80262",'_blank'); 
+                    break;
                 default:
                     break;
             }
         }
     });
-
-
-
 </script>
 </body>
 </html>
