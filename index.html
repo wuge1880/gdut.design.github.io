@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>ECharts 网络图</title>
+    <title>AI+校企融合知识图谱共创</title>
+    <meta charset="UTF-8"/>
     <script src="scripts/jquery-1.6.2.min.js"></script>
     <script src="scripts/echarts.js"></script>
 </head>
@@ -12,36 +12,51 @@
 <script type="text/javascript">
     var myChart = echarts.init(document.getElementById('main'));
     var categories = [];
-    categories[0] = {name:"AI+学校综合网络"};
+    categories[0] = {name:"AI+校企融合共创"};
     categories[1] = {name:"智慧医疗"};
-    categories[2] = {name:"智能制造"};
+    categories[2] = {name:"乡村文旅"};
     categories[3] = {name:"智能产品"};
-    categories[4] = {name:"创新展示"};
-
-    var option = {
+    categories[4] = {name:"数字展览"};
+    option = {
+        // 图的标题
         title: {
-            text: 'AI+学校知识网络图'
+            text: 'AI+校企融合知识图谱共创'
         },
+        // 提示框的配置
         tooltip: {
+//            formatter: function (x) {
+//                return x.data.des;
+//            }
         },
+        // 工具箱
         toolbox: {
+            // 显示工具箱
             show: true,
             feature: {
-                mark: {show: true},
-                restore: {show: true},
-                saveAsImage: {show: true}
+                mark: {
+                    show: true
+                },
+                // 还原
+                restore: {
+                    show: true
+                },
+                // 保存为图片
+                saveAsImage: {
+                    show: true
+                }
             }
         },
         legend: [{
+            // selectedMode: 'single',
             data: categories.map(function (a) {
                 return a.name;
             })
         }],
         series: [{
-            type: 'graph',
-            layout: 'force',
-            symbolSize: 40,
-            roam: true,
+            type: 'graph', // 类型:关系图
+            layout: 'force', //图的布局，类型为力导图
+            symbolSize: 40, // 调整节点的大小
+            roam: true, // 是否开启鼠标缩放和平移漫游。默认不开启。如果只想要开启缩放或者平移,可以设置成 'scale' 或者 'move'。设置成 true 为都开启
             edgeSymbol: ['circle', 'arrow'],
             edgeSymbolSize: [2, 10],
             edgeLabel: {
@@ -76,31 +91,116 @@
                     textStyle: {}
                 }
             },
-            data: [
-                {name: 'AI+学校综合网络', des: '', symbolSize: 100, category: 0},
-                {name: '智慧医疗', des: '', symbolSize: 50, category: 1},
-                {name: '智能制造', des: '', symbolSize: 50, category: 2},
-                {name: '智能产品', des: '', symbolSize: 50, category: 3},
-                {name: '创新展示', des: '', symbolSize: 50, category: 4},
-                {name: '智慧医疗微型传感器', des: '', symbolSize: 30, category: 1},
-                {name: '高效医疗设备', des: '', symbolSize: 50, category: 1},
-                {name: '智能制造系统研究', des: '', symbolSize: 50, category: 2},
-                {name: '动态水质监测系统', des: '', symbolSize: 50, category: 3},
-                {name: '智能家居产品', des: '', symbolSize: 50, category: 3},
-                {name: '用户行为分析系统', des: '', symbolSize: 50, category: 4}
-            ],
-            links: [
-                {source: 'AI+学校综合网络', target: '智慧医疗', name: '', des: 'link01des'},
-                {source: 'AI+学校综合网络', target: '智能制造', name: '', des: 'link02des'},
-                {source: 'AI+学校综合网络', target: '智能产品', name: '', des: 'link03des'},
-                {source: 'AI+学校综合网络', target: '创新展示', name: '', des: 'link05des'},
-                {source: '智慧医疗', target: '智慧医疗微型传感器', name: '项目成果', des: 'link05des'},
-                {source: '智慧医疗', target: '高效医疗设备', name: '项目成果', des: 'link05des'},
-                {source: '智能制造', target: '智能制造系统研究', name: '项目成果', des: 'link05des'},
-                {source: '智能产品', target: '动态水质监测系统', name: '项目成果', des: 'link05des'},
-                {source: '智能产品', target: '智能家居产品', name: '项目成果', des: 'link05des'},
-                {source: '创新展示', target: '用户行为分析系统', name: '项目成果', des: 'link05des'}
-            ],
+
+            // 数据
+            data: [{
+                name: 'AI+校企融合共创',
+                des: '',
+                symbolSize: 100,
+                category: 0,
+            }, {
+                name: '智慧医疗',
+                des: '',
+                symbolSize: 50,
+                category: 1,
+            }, {
+                name: '乡村文旅',
+                des: '',
+                symbolSize: 50,
+                category: 2,
+            }, {
+                name: '智能产品',
+                des: '',
+                symbolSize: 50,
+                category: 3,
+            }, {
+                name: '数字展览',
+                des: '',
+                symbolSize: 50,
+                category: 4,
+            }, {
+                name: '基于纳米微晶透皮技术的新一代美容仪',
+                des: '',
+                symbolSize: 30,
+                category: 1,
+            }, {
+                name: '高质高效医疗防护制品制造装备关键技术及产业化应用',
+                des: '',
+                symbolSize: 50,
+                category: 1,
+            }, {
+                name: '设计驱动的?滨肉桂产业系统创新研究',
+                des: '',
+                symbolSize: 50,
+                category: 2,
+            }, {
+                name: '偏瘫步态智能水下步态训练仪',
+                des: '',
+                symbolSize: 50,
+                category: 3,
+            }, {
+                name: '轮足多模切换四足辅助机器人',
+                des: '',
+                symbolSize: 50,
+                category: 3,
+            }, {
+                name: '多用户在线互动虚拟展厅系统',
+                des: '',
+                symbolSize: 50,
+                category: 4,
+            }]
+            ,
+            links: [{
+                source: 'AI+校企融合共创',
+                target: '智慧医疗',
+                name: '',
+                des: 'link01des'
+            }, {
+                source: 'AI+校企融合共创',
+                target: '乡村文旅',
+                name: '',
+                des: 'link02des'
+            }, {
+                source: 'AI+校企融合共创',
+                target: '智能产品',
+                name: '',
+                des: 'link03des'
+            }, {
+                source: 'AI+校企融合共创',
+                target: '数字展览',
+                name: '',
+                des: 'link05des'
+            }, {
+                source: '智慧医疗',
+                target: '基于纳米微晶透皮技术的新一代美容仪',
+                name: '产业成果',
+                des: 'link05des'
+            }, {
+                source: '智慧医疗',
+                target: '高质高效医疗防护制品制造装备关键技术及产业化应用',
+                name: '产业成果',
+                des: 'link05des'
+            }, {
+                source: '乡村文旅',
+                target: '设计驱动的?滨肉桂产业系统创新研究',
+                name: '产业成果',
+                des: 'link05des'
+            }, {
+                source: '智能产品',
+                target: '偏瘫步态智能水下步态训练仪',
+                name: '产业成果',
+                des: 'link05des'
+            }, {
+                source: '智能产品',
+                target: '轮足多模切换四足辅助机器人',
+                name: '产业成果',
+                des: 'link05des'
+            }, {
+                source: '数字展览',
+                target: '多用户在线互动虚拟展厅系统',
+                name: '产业成果',
+                des: 'link05des'
+            }],
             categories: categories,
         }]
     };
@@ -108,24 +208,20 @@
     myChart.on('click', function (params) {
         if (params.dataType == 'node') {
             switch(params.name){
-                case "智慧医疗微型传感器":
+                case "基于纳米微晶透皮技术的新一代美容仪":
                     window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80254",'_blank');
+                    //window.open = "https://courses.gdut.edu.cn/mod/page/view.php?id=80254";
                     break;
-                case "高效医疗设备":
-                    window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80256",'_blank'); 
-                    break;
-                case "智能制造系统研究":
-                    window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80257",'_blank'); 
-                    break;
-                case "动态水质监测系统":
-                    window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80261",'_blank'); 
-                    break;
-                case "智能家居产品":
-                    window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80267",'_blank'); 
-                    break;
-                case "用户行为分析系统":
-                    window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80262",'_blank'); 
-                    break;
+                case "高质高效医疗防护制品制造装备关键技术及产业化应用":
+                    window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80256",'_blank'); break;
+                case "设计驱动的榃滨肉桂产业系统创新研究":
+                    window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80257",'_blank'); break;
+                case "偏瘫步态智能水下步态训练仪":
+                    window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80261",'_blank'); break;
+                case "轮足多模切换四足辅助机器人":
+                    window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80267",'_blank'); break;
+                case "多用户在线互动虚拟展厅系统":
+                    window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80262",'_blank'); break;
                 default:
                     break;
             }
