@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<div id="main" style="width:1000px;height:800px"></div>
+<div id="main" style="width:100%;height:800px"></div>
 <script type="text/javascript">
     var myChart = echarts.init(document.getElementById('main'));
     var categories = [];
@@ -17,7 +17,18 @@
     categories[2] = {name:"乡村文旅"};
     categories[3] = {name:"智能产品"};
     categories[4] = {name:"数字展览"};
+    categories[5] = {name:"设计理论"};
     option = {
+        color: [
+            '#005eaa',
+            '#e6b600',
+            '#0098d9',
+            '#2b821d',
+            '#339ca8',
+            '#dd6b66',
+            '#cda819',
+            '#32a487'
+        ],
         // 图的标题
         title: {
             text: 'AI+校企融合知识图谱共创'
@@ -62,6 +73,7 @@
             edgeLabel: {
                 normal: {
                     textStyle: {
+
                         fontSize: 20
                     }
                 }
@@ -72,17 +84,18 @@
             },
             draggable: true,
             lineStyle: {
-                normal: {
-                    width: 2,
-                    color: '#4b565b',
-                }
+                color: 'source',
+                curveness: 0.3,
+                width: 2
             },
             edgeLabel: {
                 normal: {
                     show: true,
                     formatter: function (x) {
                         return x.data.name;
-                    }
+                    },
+                    color:  'inherit'
+
                 }
             },
             label: {
@@ -91,7 +104,12 @@
                     textStyle: {}
                 }
             },
-
+            emphasis: {
+                focus: 'adjacency',
+                lineStyle: {
+                    width: 10
+                }
+            },
             // 数据
             data: [{
                 name: 'AI+校企融合共创',
@@ -148,6 +166,76 @@
                 des: '',
                 symbolSize: 50,
                 category: 4,
+            }, {
+                name: '生活形态与美学风格',
+                des: '',
+                symbolSize: 50,
+                category: 5,
+            }, {
+                name: '设计原理与科学方法',
+                des: '',
+                symbolSize: 50,
+                category: 5,
+            }, {
+                name: '设计产业政策与战略',
+                des: '',
+                symbolSize: 50,
+                category: 5,
+            }, {
+                name: '城乡可持续设计',
+                des: '',
+                symbolSize: 50,
+                category: 5,
+            }, {
+                name: 'VR/AR/MR',
+                des: '',
+                symbolSize: 50,
+                category: 5,
+            }, {
+                name: '岭南非遗',
+                des: '',
+                symbolSize: 50,
+                category: 5,
+            }, {
+                name: '创意交互设计',
+                des: '',
+                symbolSize: 50,
+                category: 5,
+            }, {
+                name: '新媒体设计',
+                des: '',
+                symbolSize: 50,
+                category: 5,
+            }, {
+                name: '工业设计',
+                des: '',
+                symbolSize: 50,
+                category: 5,
+            },  {
+                name: '新材料',
+                des: '',
+                symbolSize: 50,
+                category: 5,
+            }, {
+                name: '医疗器械',
+                des: '',
+                symbolSize: 50,
+                category: 5,
+            },{
+                name: '机械设计',
+                des: '',
+                symbolSize: 50,
+                category: 5,
+            }, {
+                name: '信息服务设计',
+                des: '',
+                symbolSize: 50,
+                category: 5,
+            }, {
+                name: '3D打印',
+                des: '',
+                symbolSize: 50,
+                category: 5,
             }]
             ,
             links: [{
@@ -181,9 +269,64 @@
                 name: '产业成果',
                 des: 'link05des'
             }, {
+                source: '工业设计',
+                target: '智慧医疗',
+                name: '理论支撑',
+                des: 'link05des'
+            }, {
+                source: '机械设计',
+                target: '智慧医疗',
+                name: '理论支撑',
+                des: 'link05des'
+            }, {
+                source: '新材料',
+                target: '智慧医疗',
+                name: '理论支撑',
+                des: 'link05des'
+            }, {
+                source: '医疗器械',
+                target: '智慧医疗',
+                name: '理论支撑',
+                des: 'link05des'
+            }, {
+                source: '设计原理与科学方法',
+                target: '智慧医疗',
+                name: '理论支撑',
+                des: 'link05des'
+            }, {
                 source: '乡村文旅',
                 target: '设计驱动的榃滨肉桂产业系统创新研究',
                 name: '产业成果',
+                des: 'link05des'
+            }, {
+                source: '生活形态与美学风格',
+                target: '乡村文旅',
+                name: '理论支撑',
+                des: 'link05des'
+            }, {
+                source: '岭南非遗',
+                target: '乡村文旅',
+                name: '理论支撑',
+                des: 'link05des'
+            }, {
+                source: '信息服务设计',
+                target: '乡村文旅',
+                name: '理论支撑',
+                des: 'link05des'
+            }, {
+                source: '城乡可持续设计',
+                target: '乡村文旅',
+                name: '理论支撑',
+                des: 'link05des'
+            }, {
+                source: '设计产业政策与战略',
+                target: '乡村文旅',
+                name: '理论支撑',
+                des: 'link05des'
+            }, {
+                source: '设计原理与科学方法',
+                target: '乡村文旅',
+                name: '理论支撑',
                 des: 'link05des'
             }, {
                 source: '智能产品',
@@ -196,9 +339,59 @@
                 name: '产业成果',
                 des: 'link05des'
             }, {
+                source: '创意交互设计',
+                target: '智能产品',
+                name: '理论支撑',
+                des: 'link05des'
+            }, {
+                source: '3D打印',
+                target: '智能产品',
+                name: '理论支撑',
+                des: 'link05des'
+            }, {
+                source: '机器人',
+                target: '智能产品',
+                name: '理论支撑',
+                des: 'link05des'
+            }, {
+                source: '工业设计',
+                target: '智能产品',
+                name: '理论支撑',
+                des: 'link05des'
+            }, {
+                source: '信息服务设计',
+                target: '智能产品',
+                name: '理论支撑',
+                des: 'link05des'
+            }, {
+                source: '机械设计',
+                target: '智能产品',
+                name: '理论支撑',
+                des: 'link05des'
+            }, {
                 source: '数字展览',
                 target: '多用户在线互动虚拟展厅系统',
                 name: '产业成果',
+                des: 'link05des'
+            }, {
+                source: 'VR/AR/MR',
+                target: '数字展览',
+                name: '理论支撑',
+                des: 'link05des'
+            }, {
+                source: '岭南非遗',
+                target: '数字展览',
+                name: '理论支撑',
+                des: 'link05des'
+            }, {
+                source: '创意交互设计',
+                target: '数字展览',
+                name: '理论支撑',
+                des: 'link05des'
+            }, {
+                source: '新媒体设计',
+                target: '数字展览',
+                name: '理论支撑',
                 des: 'link05des'
             }],
             categories: categories,
@@ -222,11 +415,16 @@
                     window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80267",'_blank'); break;
                 case "多用户在线互动虚拟展厅系统":
                     window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80262",'_blank'); break;
+                case "新媒体设计":
+                    window.open("https://courses.gdut.edu.cn/enrol/index.php?id=623",'_blank'); break;
                 default:
                     break;
             }
         }
     });
+
+
+
 </script>
 </body>
 </html>
