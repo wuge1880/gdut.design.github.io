@@ -18,6 +18,9 @@
     categories[3] = {name:"智能产品"};
     categories[4] = {name:"数字展览"};
     categories[5] = {name:"设计理论"};
+    categories[6] = {name:"服务体验"};
+    categories[7] = {name:"创意交互"};
+    
     option = {
         color: [
             '#005eaa',
@@ -31,49 +34,40 @@
         ],
         // 图的标题
         title: {
-            text: 'AI+校企融合知识图谱共创'
+            text: '     AI+校企融合知识图谱共创'
         },
         // 提示框的配置
-        tooltip: {
-//            formatter: function (x) {
-//                return x.data.des;
-//            }
-        },
+        tooltip: {},
         // 工具箱
         toolbox: {
-            // 显示工具箱
             show: true,
             feature: {
                 mark: {
                     show: true
                 },
-                // 还原
                 restore: {
                     show: true
                 },
-                // 保存为图片
                 saveAsImage: {
                     show: true
                 }
             }
         },
         legend: [{
-            // selectedMode: 'single',
             data: categories.map(function (a) {
                 return a.name;
             })
         }],
         series: [{
-            type: 'graph', // 类型:关系图
-            layout: 'force', //图的布局，类型为力导图
-            symbolSize: 40, // 调整节点的大小
-            roam: true, // 是否开启鼠标缩放和平移漫游。默认不开启。如果只想要开启缩放或者平移,可以设置成 'scale' 或者 'move'。设置成 true 为都开启
+            type: 'graph', 
+            layout: 'force', 
+            symbolSize: 40, 
+            roam: true, 
             edgeSymbol: ['circle', 'arrow'],
             edgeSymbolSize: [2, 10],
             edgeLabel: {
                 normal: {
                     textStyle: {
-
                         fontSize: 20
                     }
                 }
@@ -95,7 +89,6 @@
                         return x.data.name;
                     },
                     color:  'inherit'
-
                 }
             },
             label: {
@@ -110,7 +103,6 @@
                     width: 10
                 }
             },
-            // 数据
             data: [{
                 name: 'AI+校企融合共创',
                 des: '',
@@ -211,7 +203,7 @@
                 des: '',
                 symbolSize: 50,
                 category: 5,
-            },  {
+            }, {
                 name: '新材料',
                 des: '',
                 symbolSize: 50,
@@ -221,7 +213,7 @@
                 des: '',
                 symbolSize: 50,
                 category: 5,
-            },{
+            }, {
                 name: '机械设计',
                 des: '',
                 symbolSize: 50,
@@ -236,8 +228,67 @@
                 des: '',
                 symbolSize: 50,
                 category: 5,
-            }]
-            ,
+            }, {
+                name: '服务体验',
+                des: '',
+                symbolSize: 50,
+                category: 6,
+            }, {
+                name: '客户满意度研究',
+                des: '',
+                symbolSize: 30,
+                category: 6,
+            }, {
+                name: '服务流程优化',
+                des: '',
+                symbolSize: 30,
+                category: 6,
+            }, {
+                name: '用户行为分析',
+                des: '',
+                symbolSize: 30,
+                category: 6,
+            }, {
+                name: '跨渠道客户体验',
+                des: '',
+                symbolSize: 30,
+                category: 6,
+            }, {
+                name: '服务设计方法',
+                des: '',
+                symbolSize: 30,
+                category: 6,
+            }, {
+                name: '创意交互',
+                des: '',
+                symbolSize: 50,
+                category: 7,
+            }, {
+                name: '虚拟现实体验',
+                des: '',
+                symbolSize: 30,
+                category: 7,
+            }, {
+                name: '交互设计原则',
+                des: '',
+                symbolSize: 30,
+                category: 7,
+            }, {
+                name: '用户界面设计',
+                des: '',
+                symbolSize: 30,
+                category: 7,
+            }, {
+                name: '沉浸式体验',
+                des: '',
+                symbolSize: 30,
+                category: 7,
+            }, {
+                name: '互动装置艺术',
+                des: '',
+                symbolSize: 30,
+                category: 7,
+            }],
             links: [{
                 source: 'AI+校企融合共创',
                 target: '智慧医疗',
@@ -258,6 +309,16 @@
                 target: '数字展览',
                 name: '',
                 des: 'link05des'
+            }, {
+                source: 'AI+校企融合共创',
+                target: '服务体验',
+                name: '',
+                des: 'link06des'
+            }, {
+                source: 'AI+校企融合共创',
+                target: '创意交互',
+                name: '',
+                des: 'link07des'
             }, {
                 source: '智慧医疗',
                 target: '基于纳米微晶透皮技术的新一代美容仪',
@@ -393,6 +454,101 @@
                 target: '数字展览',
                 name: '理论支撑',
                 des: 'link05des'
+            }, {
+                source: '服务体验',
+                target: '客户满意度研究',
+                name: '研究方向',
+                des: 'link06des'
+            }, {
+                source: '服务体验',
+                target: '服务流程优化',
+                name: '研究方向',
+                des: 'link06des'
+            }, {
+                source: '服务体验',
+                target: '用户行为分析',
+                name: '研究方向',
+                des: 'link06des'
+            }, {
+                source: '服务体验',
+                target: '跨渠道客户体验',
+                name: '研究方向',
+                des: 'link06des'
+            }, {
+                source: '服务体验',
+                target: '服务设计方法',
+                name: '研究方向',
+                des: 'link06des'
+            }, {
+                source: '创意交互',
+                target: '虚拟现实体验',
+                name: '研究方向',
+                des: 'link07des'
+            }, {
+                source: '创意交互',
+                target: '交互设计原则',
+                name: '研究方向',
+                des: 'link07des'
+            }, {
+                source: '创意交互',
+                target: '用户界面设计',
+                name: '研究方向',
+                des: 'link07des'
+            }, {
+                source: '创意交互',
+                target: '沉浸式体验',
+                name: '研究方向',
+                des: 'link07des'
+            }, {
+                source: '创意交互',
+                target: '互动装置艺术',
+                name: '研究方向',
+                des: 'link07des'
+            }, {
+                source: '创意交互',
+                target: '工业设计',
+                name: '理论支撑',
+                des: 'link07des'
+            }, {
+                source: '服务体验',
+                target: '智慧医疗',
+                name: '应用方向',
+                des: 'link06des'
+            }, {
+                source: '服务体验',
+                target: '乡村文旅',
+                name: '应用方向',
+                des: 'link06des'
+            }, {
+                source: '服务体验',
+                target: '智能产品',
+                name: '应用方向',
+                des: 'link06des'
+            }, {
+                source: '服务体验',
+                target: '数字展览',
+                name: '应用方向',
+                des: 'link06des'
+            }, {
+                source: '创意交互',
+                target: '智慧医疗',
+                name: '应用方向',
+                des: 'link07des'
+            }, {
+                source: '创意交互',
+                target: '乡村文旅',
+                name: '应用方向',
+                des: 'link07des'
+            }, {
+                source: '创意交互',
+                target: '智能产品',
+                name: '应用方向',
+                des: 'link07des'
+            }, {
+                source: '创意交互',
+                target: '数字展览',
+                name: '应用方向',
+                des: 'link07des'
             }],
             categories: categories,
         }]
@@ -403,7 +559,6 @@
             switch(params.name){
                 case "基于纳米微晶透皮技术的新一代美容仪":
                     window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80254",'_blank');
-                    //window.open = "https://courses.gdut.edu.cn/mod/page/view.php?id=80254";
                     break;
                 case "高质高效医疗防护制品制造装备关键技术及产业化应用":
                     window.open("https://courses.gdut.edu.cn/mod/page/view.php?id=80256",'_blank'); break;
@@ -424,15 +579,16 @@
                 case "创意交互设计":
                     window.open("https://courses.gdut.edu.cn/course/view.php?id=1333",'_blank'); break;
                 case "工业设计":
-                    window.open("https://courses.gdut.edu.cn/course/view.php?id=420",'_blank'); break;
-                default:
-                    break;
+                    window.open("https://courses.gdut.edu.cn/course/view.php?id=1398",'_blank'); break;
+                case "设计原理与科学方法":
+                    window.open("https://courses.gdut.edu.cn/course/view.php?id=1311",'_blank'); break;
+                case "岭南非遗":
+                    window.open("https://courses.gdut.edu.cn/course/view.php?id=1587",'_blank'); break;
+                case "设计产业政策与战略":
+                    window.open("https://courses.gdut.edu.cn/course/view.php?id=1297",'_blank'); break;
             }
         }
     });
-
-
-
 </script>
 </body>
 </html>
